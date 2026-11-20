@@ -4,7 +4,11 @@ Exceptra is an AI-assisted logistics exception control tower. The name is derive
 
 It helps logistics coordinators detect, understand, decide, and follow through on shipment exceptions without surrendering human accountability.
 
-[Open the live prototype](https://souravdhalidesignmonks.github.io/logistics-exceptra/) · [View the repository](https://github.com/souravdhalidesignmonks/logistics-exceptra) · [View the case study](https://souravdhalidesignmonks.github.io/logistics-exceptra/case-study/) · [Read the design notes](./DESIGN.md)
+**Live app:** https://souravdhalidesignmonks.github.io/logistics-exceptra/
+
+**Case study:** https://souravdhalidesignmonks.github.io/logistics-exceptra/case-study/
+
+[Read the design notes](./DESIGN.md)
 
 > This is an interactive front-end prototype. External requests, approvals, carrier actions, and operational updates are simulated; nothing is sent to a live logistics system.
 
@@ -204,6 +208,7 @@ npm run preview
 The public prototype is built from `app/` and deployed by GitHub Actions whenever a commit reaches `main`:
 
 - **Live site:** [souravdhalidesignmonks.github.io/logistics-exceptra](https://souravdhalidesignmonks.github.io/logistics-exceptra/)
+- **Case study:** [souravdhalidesignmonks.github.io/logistics-exceptra/case-study](https://souravdhalidesignmonks.github.io/logistics-exceptra/case-study/)
 - **Repository:** [github.com/souravdhalidesignmonks/logistics-exceptra](https://github.com/souravdhalidesignmonks/logistics-exceptra)
 - **Primary branch:** `main`
 - **Deployment workflow:** [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml)
