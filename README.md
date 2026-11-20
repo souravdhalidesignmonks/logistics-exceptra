@@ -4,7 +4,7 @@ Exceptra is an AI-assisted logistics exception control tower. The name is derive
 
 It helps logistics coordinators detect, understand, decide, and follow through on shipment exceptions without surrendering human accountability.
 
-[Open the live prototype](https://souravdhalidesignmonks.github.io/logistics-exceptra/) · [View the repository](https://github.com/souravdhalidesignmonks/logistics-exceptra) · [View the case study](https://claude.ai/artifact/2pwm9tsAM8xsEo6wr3U2CU) · [Read the design notes](./DESIGN.md)
+[Open the live prototype](https://souravdhalidesignmonks.github.io/logistics-exceptra/) · [View the repository](https://github.com/souravdhalidesignmonks/logistics-exceptra) · [View the case study](https://souravdhalidesignmonks.github.io/logistics-exceptra/case-study/) · [Read the design notes](./DESIGN.md)
 
 > This is an interactive front-end prototype. External requests, approvals, carrier actions, and operational updates are simulated; nothing is sent to a live logistics system.
 
@@ -229,7 +229,7 @@ A production implementation would require:
 | Repository | [souravdhalidesignmonks/logistics-exceptra](https://github.com/souravdhalidesignmonks/logistics-exceptra) |
 | Public demo | [GitHub Pages](https://souravdhalidesignmonks.github.io/logistics-exceptra/) |
 | Source | [`app/`](./app) |
-| Case study | [Exceptra case study](https://claude.ai/artifact/2pwm9tsAM8xsEo6wr3U2CU) |
+| Case study | [Exceptra case study](https://souravdhalidesignmonks.github.io/logistics-exceptra/case-study/) |
 | Design notes | [`DESIGN.md`](./DESIGN.md) |
 | Hosting workflow | [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml) |
 | License | No license file is currently included. |
