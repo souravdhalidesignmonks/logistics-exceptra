@@ -1,0 +1,315 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/outfit";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif;
+    --color-brand: var(--brand);
+    --color-brand-deep: var(--brand-deep);
+    --color-brand-soft: var(--brand-soft);
+    --color-brand-tint: var(--brand-tint);
+    --color-canvas: var(--canvas);
+    --color-surface: var(--surface);
+    --color-success: var(--success);
+    --color-scrim: color-mix(in oklab, var(--ink) 28%, transparent);
+    --shadow-float: 0 1px 2px color-mix(in oklab, var(--ink) 4%, transparent), 0 0 0 1px color-mix(in oklab, var(--ink) 5%, transparent);
+    --shadow-menu: 0 20px 50px -20px color-mix(in oklab, var(--ink) 35%, transparent);
+    --shadow-overlay: 0 40px 100px -30px color-mix(in oklab, var(--ink) 50%, transparent);
+    --shadow-sheet: 0 30px 80px -30px color-mix(in oklab, var(--ink) 45%, transparent);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    /* Warm analytics: neutral grey canvas, soft lighter panels, white controls, espresso ink, burnt-orange signal */
+    --canvas: oklch(0.935 0 0);
+    --background: oklch(0.955 0 0);
+    --surface: oklch(0.975 0 0);
+    --foreground: oklch(0.2 0.012 50);
+    --card: oklch(0.975 0 0);
+    --card-foreground: oklch(0.2 0.012 50);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.2 0.012 50);
+    --primary: oklch(0.255 0.03 45);
+    --primary-foreground: oklch(0.99 0 0);
+    --secondary: oklch(1 0 0);
+    --secondary-foreground: oklch(0.2 0.012 50);
+    --muted: oklch(0.94 0 0);
+    --muted-foreground: oklch(0.55 0.006 60);
+    --accent: oklch(0.94 0.004 60);
+    --accent-foreground: oklch(0.2 0.012 50);
+    --destructive: oklch(0.56 0.17 38);
+    --border: oklch(0.905 0.002 60);
+    --input: oklch(0.905 0.002 60);
+    --ring: oklch(0.7 0.12 50);
+    --brand: oklch(0.68 0.165 50);
+    --brand-deep: oklch(0.53 0.15 45);
+    --brand-soft: oklch(0.8 0.12 55);
+    --brand-tint: oklch(0.955 0.03 60);
+    /* shadow and overlay ink, and the white used for highlights on dark fills */
+    --ink: oklch(0.21 0.02 60);
+    --highlight: oklch(1 0 0);
+    /* route map base layers (read at runtime, MapLibre needs concrete colours) */
+    --map-water: oklch(0.89 0.004 75);
+    --map-land: oklch(0.98 0.001 100);
+    --map-coast: oklch(0.87 0.005 75);
+    --map-border: oklch(0.88 0.007 70);
+    --success: oklch(0.6 0.13 150);
+    --chart-1: oklch(0.53 0.15 45);
+    --chart-2: oklch(0.68 0.165 50);
+    --chart-3: oklch(0.8 0.12 55);
+    --chart-4: oklch(0.72 0.13 90);
+    --chart-5: oklch(0.255 0.03 45);
+    --radius: 0.9rem;
+    --sidebar: oklch(0.975 0 0);
+    --sidebar-foreground: oklch(0.2 0.012 50);
+    --sidebar-primary: oklch(0.255 0.03 45);
+    --sidebar-primary-foreground: oklch(0.99 0 0);
+    --sidebar-accent: oklch(0.94 0 0);
+    --sidebar-accent-foreground: oklch(0.2 0.012 50);
+    --sidebar-border: oklch(0.905 0.002 60);
+    --sidebar-ring: oklch(0.7 0.12 50);
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-canvas text-foreground antialiased;
+    font-feature-settings: "ss01", "tnum";
+    }
+  h1, h2, h3, [data-slot="card-title"], [data-slot="sheet-title"], [data-slot="dialog-title"], [data-slot="alert-dialog-title"] {
+    font-weight: 450;
+    letter-spacing: -0.015em;
+    }
+  html {
+    @apply font-sans;
+    }
+}
+
+@layer components {
+  [data-slot="sheet-content"] [data-slot="card"] {
+    @apply bg-muted/50 shadow-none ring-0;
+  }
+}
+
+@layer utilities {
+  [data-slot="sheet-content"] [data-slot="card"] {
+    background-color: var(--popover) !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: calc(var(--radius) * 1.6) !important;
+    --tw-ring-shadow: 0 0 transparent !important;
+  }
+
+  [data-slot="sheet-content"] [data-slot="card"] [data-slot="badge"][data-variant="secondary"],
+  [data-slot="sheet-content"] [data-slot="card"] [data-slot="badge"][data-variant="outline"] {
+    background-color: var(--background) !important;
+    border-color: transparent !important;
+    color: var(--foreground) !important;
+  }
+
+  [data-slot="sheet-content"] [data-slot="tabs-list"] [data-slot="badge"] {
+    background-color: var(--popover) !important;
+    border-color: var(--border) !important;
+    color: var(--foreground) !important;
+  }
+
+  [data-slot="sheet-content"] [data-slot="card-header"]:has(> [data-slot="card-description"] + [data-slot="card-title"]),
+  [data-slot="sheet-content"] [data-slot="card-header"] > div:has(> [data-slot="card-description"] + [data-slot="card-title"]) {
+    gap: 0;
+  }
+
+  [data-slot="sheet-content"] [data-slot="card-header"] [data-slot="card-description"] + [data-slot="card-title"] {
+    margin-top: 0 !important;
+  }
+
+  [data-slot="sheet-content"] [data-slot="tabs-content"][data-state="active"] [data-slot="card-content"] > .space-y-3 > div {
+    @apply rounded-2xl bg-background px-4 py-3;
+    box-shadow: none !important;
+  }
+
+  [data-slot="sheet-content"] [data-slot="tabs-content"][data-state="active"] [data-slot="card-content"].space-y-5 {
+    position: relative;
+  }
+
+  [data-slot="sheet-content"] [data-slot="tabs-content"][data-state="active"] [data-slot="card-content"].space-y-5::before {
+    content: "";
+    position: absolute;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    left: 5rem;
+    width: 1px;
+    background: var(--border);
+  }
+
+  [data-slot="sheet-content"] [data-slot="tabs-content"][data-state="active"] [data-slot="card-content"].space-y-5 > div {
+    position: relative;
+    column-gap: 2rem;
+  }
+
+  [data-slot="sheet-content"] [data-slot="tabs-content"][data-state="active"] [data-slot="card-content"].space-y-5 > div > span {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 3rem;
+  }
+
+  [data-slot="sheet-content"] [data-slot="tabs-content"][data-state="active"] [data-slot="card-content"].space-y-5 > div > div {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  [data-slot="sheet-content"] [data-slot="tabs-content"][data-state="active"] [data-slot="card-content"].space-y-5 > div::before {
+    content: "";
+    position: absolute;
+    top: 0.35rem;
+    left: 3.2rem;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 9999px;
+    background: var(--popover);
+    box-shadow: 0 0 0 2px var(--brand-soft);
+  }
+
+  /* the reference's diagonal hatch, for bars and highlighted fills */
+  .hatch {
+    background-image: repeating-linear-gradient(135deg, color-mix(in oklab, currentColor 22%, transparent) 0 1px, transparent 1px 7px);
+  }
+  .hatch-light {
+    background-image: repeating-linear-gradient(135deg, color-mix(in oklab, var(--highlight) 13%, transparent) 0 1px, transparent 1px 9px);
+  }
+  /* white floating control: buttons, inputs, chips on the grey canvas */
+  .float-ctl {
+    background-color: var(--popover);
+    box-shadow: var(--shadow-float);
+  }
+
+  /* KPI cards: a soft light follows the pointer (decoration only) */
+  .kpi-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(240px circle at var(--spot-x, 50%) var(--spot-y, 0%), color-mix(in oklab, var(--brand) 14%, transparent), transparent 70%);
+    pointer-events: none;
+  }
+  .kpi-card.text-white::before {
+    background: radial-gradient(240px circle at var(--spot-x, 50%) var(--spot-y, 0%), color-mix(in oklab, var(--highlight) 16%, transparent), transparent 70%);
+  }
+  .kpi-card:hover::before { opacity: 1; }
+
+  /* A quiet backdrop for the page: a faint warm glow and a dot grid that fades out below the header */
+  .app-ambient { position: relative; isolation: isolate; }
+  .app-ambient::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 560px;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(circle, color-mix(in oklab, var(--foreground) 9%, transparent) 1px, transparent 1.2px);
+    background-size: 22px 22px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 110px, black 40%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, black 110px, black 40%, transparent 100%);
+  }
+
+  /* Section nav: an item morphs from a white circle into the dark labelled pill */
+  .nav-morph {
+    --nav-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    padding-inline: 0.6875rem;
+    background-color: var(--popover);
+    color: color-mix(in oklab, var(--foreground) 75%, transparent);
+    box-shadow: var(--shadow-float);
+    transition:
+      background-color 0.35s var(--nav-ease),
+      color 0.35s var(--nav-ease),
+      box-shadow 0.35s var(--nav-ease),
+      padding 0.45s var(--nav-ease),
+      transform 0.2s var(--nav-ease);
+  }
+  .nav-morph:hover { color: var(--foreground); }
+  .nav-morph:active { transform: scale(0.96); }
+  .nav-morph[data-active] {
+    padding-inline: 0.875rem 1rem;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: 0 0 0 1px transparent;
+  }
+  .nav-morph-label {
+    grid-template-columns: 0fr;
+    opacity: 0;
+    margin-left: 0;
+    transition:
+      grid-template-columns 0.45s var(--nav-ease),
+      opacity 0.25s ease,
+      margin-left 0.45s var(--nav-ease);
+  }
+  .nav-morph[data-active] .nav-morph-label {
+    grid-template-columns: 1fr;
+    opacity: 1;
+    margin-left: 0.5rem;
+    transition:
+      grid-template-columns 0.45s var(--nav-ease),
+      opacity 0.3s ease 0.12s,
+      margin-left 0.45s var(--nav-ease);
+  }
+  .nav-morph[data-active] .nav-morph-icon { animation: nav-icon-pop 0.45s var(--nav-ease); }
+  @keyframes nav-icon-pop {
+    0% { transform: scale(0.7) rotate(-12deg); }
+    100% { transform: scale(1) rotate(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-morph, .nav-morph-label { transition: none; }
+    .nav-morph[data-active] .nav-morph-icon { animation: none; }
+  }
+
+  /* Fields sitting on a white dialog take the grey fill instead of white-on-white */
+  :is([data-slot="alert-dialog-content"], [data-slot="dialog-content"]) :is([data-slot="input"], [data-slot="textarea"]) {
+    background-color: var(--background);
+    box-shadow: none;
+  }
+}
